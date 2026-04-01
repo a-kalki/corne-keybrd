@@ -29,8 +29,7 @@
 
 / {
     behaviors {
-        // Удобный шифт: тап - Caps Word (умный капс), зажать - Shift
-
+        // Переключатель для num layer. Двойной тап, закрепляет (открепляет).
         num_td: num_td {
             compatible = "zmk,behavior-tap-dance";
             label = "NUM_TD";
