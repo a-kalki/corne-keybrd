@@ -30,12 +30,6 @@
 / {
     behaviors {
         // Удобный шифт: тап - Caps Word (умный капс), зажать - Shift
-
-        td_shft: tap_dance_shift {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp LSHIFT>, <&caps_word>;
-        };
     };
 
     macros {
@@ -101,7 +95,7 @@
             display-name = "QWERTY";
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E     &kp R   &kp T                                &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td_shft   &kp A  &kp S  &kp D     &kp F   &kp G                      &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&none      &kp A  &kp S  &kp D     &kp F   &kp G                      &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z  &kp X  &kp C     &kp V   &kp B        &kp C_MUTE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                          &kp LGUI  &tog 1  &lt 3 SPACE                                                &lt 4 ENTER  &mo 2  &kp RALT
             >;
@@ -157,7 +151,7 @@
             display-name = "SYS";
             bindings = <
 &studio_unlock  &bt BT_CLR    &none         &none         &none         &none                            &mmv MOVE_UP                     &kp F12  &kp F7  &kp F8  &kp F9  &kp CAPSLOCK  &kp BSPC
-&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F11  &kp F4  &kp F5  &kp F6  &none         &none
+&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F11  &kp F4  &kp F5  &kp F6  &caps_word    &none
 &out OUT_BLE    &out OUT_USB  &bootloader   &sys_reset    &none         &none   &none                    &mmv MOVE_DOWN                   &kp F10  &kp F1  &kp F2  &kp F3  &none         &none
                                             &trans        &trans        &trans                                                            &trans   &trans  &trans
             >;
