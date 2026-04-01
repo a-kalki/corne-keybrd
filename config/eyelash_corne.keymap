@@ -101,10 +101,10 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp E     &kp R    &kp T                                &kp UP                &kp Y        &kp U  &kp I         &kp O    &kp P     &kp BSPC
-&kp LEFT_SHIFT  &kp A  &kp S  &kp D     &kp F    &kp G                      &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K         &kp L    &kp SEMI  &kp SQT
-&kp LCTRL       &kp Z  &kp X  &kp C     &kp V    &kp B        &kp C_MUTE              &kp DOWN              &kp N        &kp M  &kp COMMA     &kp DOT  &kp FSLH  &kp ESC
-                              &kp LGUI  &num_td  &lt 3 SPACE                                                &lt 4 ENTER  &mo 2  &kp LEFT_ALT
+&kp ESCAPE    &kp Q  &kp W  &kp E           &kp R    &kp T                                &kp UP                &kp Y        &kp U  &kp I            &kp O    &kp P     &kp BSPC
+&kp LEFT_ALT  &kp A  &kp S  &kp D           &kp F    &kp G                      &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K            &kp L    &kp SEMI  &kp SQT
+&kp LEFT_GUI  &kp Z  &kp X  &kp C           &kp V    &kp B        &kp C_MUTE              &kp DOWN              &kp N        &kp M  &kp COMMA        &kp DOT  &kp FSLH  &kp LCTRL
+                            &kp LEFT_SHIFT  &num_td  &lt 3 SPACE                                                &lt 4 ENTER  &mo 2  &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -129,10 +129,10 @@
         sym_layer {
             display-name = "SYM";
             bindings = <
-&caps_word  &kp LBRC  &kp RBRC  &kp LPAR  &kp RPAR    &kp DOT                                &mmv MOVE_UP                     &kp GRAVE  &kp TILDE          &kp COLON  &kp SEMI   &kp PIPE       &kp DEL
-&kp RSHIFT  &kp LBKT  &kp RBKT  &kp LT    &kp GT      &kp COMMA              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp APOS   &kp DOUBLE_QUOTES  &kp PLUS   &kp MINUS  &kp BACKSLASH  &none
-&kp RCTRL   &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR  &kp PERCENT  &trans                    &mmv MOVE_DOWN                   &kp CARET  &kp AMPERSAND      &kp UNDER  &kp EQUAL  &kp SLASH      &none
-                                &kp RGUI  &trans      &kp SPACE                                                               &kp RET    &trans             &kp RALT
+&kp TAB   &kp LBRC       &kp RBRC  &kp LPAR       &kp RPAR   &kp GRAVE                                    &mmv MOVE_UP                     &kp DOT    &kp PLUS      &kp PERCENT  &kp COLON  &kp EXCLAMATION  &kp DEL
+&kp RALT  &kp LBKT       &kp RBKT  &kp LT         &kp GT     &kp APOSTROPHE               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp COMMA  &kp MINUS     &kp EQUAL    &kp SEMI   &kp QUESTION     &kp DOLLAR
+&kp RGUI  &kp AMPERSAND  &kp PIPE  &kp BACKSLASH  &kp SLASH  &kp DOUBLE_QUOTES  &trans                    &mmv MOVE_DOWN                   &kp HASH   &kp ASTERISK  &kp CARET    &kp UNDER  &kp TILDE        &kp RCTRL
+                                   &trans         &trans     &trans                                                                        &trans     &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -143,13 +143,13 @@
         nav_layer {
             display-name = "NAV";
             bindings = <
-&trans  &mkp LCLK       &mkp MCLK       &mkp RCLK     &mkp MB4         &mkp MB5                            &mmv MOVE_UP                     &kp PG_UP       &kp PAGE_DOWN   &none         &none      &kp HOME  &kp BSPC
-&trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &kp END   &none
-&trans  &mmv_lt5        &mmv_dn5        &mmv_up5      &mmv_rt5         &none     &trans                    &mmv MOVE_DOWN                   &m_lt5          &m_dn5          &m_dn5        &m_up5     &none     &none
-                                        &trans        &trans           &trans                                                               &trans          &trans          &trans
+&mkp MB4  &none           &none           &none         &none            &mkp LCLK                            &mmv MOVE_UP                     &none           &none           &none         &none      &kp PG_UP      &kp HOME
+&mkp MB5  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &mkp MCLK            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &kp PAGE_DOWN  &kp END
+&none     &mmv_lt5        &mmv_dn5        &mmv_up5      &mmv_rt5         &mkp RCLK  &trans                    &mmv MOVE_DOWN                   &m_lt5          &m_dn5          &m_dn5        &m_up5     &none          &none
+                                          &trans        &trans           &trans                                                                &trans          &trans          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         // LAYER 4: SYS (F-клавиши по сетке NUM)
@@ -158,10 +158,12 @@
             display-name = "SYS";
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4  &bt BT_CLR                             &none                    &kp F12  &kp F7  &kp F8  &kp F9  &kp CAPSLOCK  &kp PRINTSCREEN
-&none         &none         &none         &none           &none         &bt BT_CLR_ALL            &kp K_SLEEP  &kp K_POWER  &kp K_LOCK  &kp F11  &kp F4  &kp F5  &kp F6  &none         &kp INS
+&none         &none         &none         &none           &none         &bt BT_CLR_ALL            &kp K_SLEEP  &kp K_POWER  &kp K_LOCK  &kp F11  &kp F4  &kp F5  &kp F6  &caps_word    &kp INS
 &out OUT_BLE  &out OUT_USB  &none         &studio_unlock  &sys_reset    &bootloader     &trans                 &none                    &kp F10  &kp F1  &kp F2  &kp F3  &sys_reset    &bootloader
                                           &trans          &trans        &trans                                                          &trans   &trans  &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
