@@ -129,10 +129,10 @@
         sym_layer {
             display-name = "SYM";
             bindings = <
-&caps_word  &kp LBRC  &kp RBRC  &kp LPAR  &kp RPAR    &kp DOT                                &mmv MOVE_UP                     &kp GRAVE  &kp TILDE          &kp COLON  &kp SEMI   &none          &kp DEL
-&kp RSHIFT  &kp LBKT  &kp RBKT  &kp LT    &kp GT      &kp COMMA              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp APOS   &kp DOUBLE_QUOTES  &kp PLUS   &kp MINUS  &kp BACKSLASH  &kp ENTER
-&kp RCTRL   &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR  &kp PERCENT  &trans                    &mmv MOVE_DOWN                   &kp CARET  &kp AMPERSAND      &kp UNDER  &kp EQUAL  &kp SLASH      &kp PIPE
-                                &trans    &trans      &kp SPACE                                                               &kp RET    &trans             &kp RALT
+&caps_word  &kp LBRC  &kp RBRC  &kp LPAR  &kp RPAR    &kp DOT                                &mmv MOVE_UP                     &kp GRAVE  &kp TILDE          &kp COLON  &kp SEMI   &kp PIPE       &kp DEL
+&kp RSHIFT  &kp LBKT  &kp RBKT  &kp LT    &kp GT      &kp COMMA              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp APOS   &kp DOUBLE_QUOTES  &kp PLUS   &kp MINUS  &kp BACKSLASH  &none
+&kp RCTRL   &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR  &kp PERCENT  &trans                    &mmv MOVE_DOWN                   &kp CARET  &kp AMPERSAND      &kp UNDER  &kp EQUAL  &kp SLASH      &none
+                                &kp RGUI  &trans      &kp SPACE                                                               &kp RET    &trans             &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
