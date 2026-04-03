@@ -2,8 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: joelspadin
-      url-base: https://github.com
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: eyelash_corne
       url: https://github.com/a741725193/zmk-new_corne
@@ -13,7 +13,7 @@ manifest:
       revision: v0.3.0
       import: app/west.yml
     - name: zmk-unicode
-      remote: joelspadin
-      revision: main
+      remote: urob
+      revision: v0.3 # Should match ZMK release.
   self:
     path: config
