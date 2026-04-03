@@ -1,6 +1,8 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10   // 10
 
+#include <dt-bindings/zmk/unicode.h>
+
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
@@ -8,6 +10,45 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
+
+// +++ СИМВОЛЫ UNICODE +++
+// --- ВЕРХНИЙ РЯД ---
+UC_UNICODE_PAIR(uc_lbrc, U_007B) // {
+UC_UNICODE_PAIR(uc_rbrc, U_007D) // }
+UC_UNICODE_PAIR(uc_lpar, U_0028) // (
+UC_UNICODE_PAIR(uc_rpar, U_0029) // )
+UC_UNICODE_PAIR(uc_grv,  U_0060) // `
+UC_UNICODE_PAIR(uc_dot,  U_002E) // .
+UC_UNICODE_PAIR(uc_plus, U_002B) // +
+UC_UNICODE_PAIR(uc_perc, U_0025) // %
+UC_UNICODE_PAIR(uc_col,  U_003A) // :
+UC_UNICODE_PAIR(uc_excl, U_0021) // !
+UC_UNICODE_PAIR(uc_til,  U_007E) // ~
+
+// --- СРЕДНИЙ РЯД ---
+UC_UNICODE_PAIR(uc_lbkt, U_005B) // [
+UC_UNICODE_PAIR(uc_rbkt, U_005D) // ]
+UC_UNICODE_PAIR(uc_lt,   U_003C) // <
+UC_UNICODE_PAIR(uc_gt,   U_003E) // >
+UC_UNICODE_PAIR(uc_apos, U_0027) // '
+UC_UNICODE_PAIR(uc_com,  U_002C) // ,
+UC_UNICODE_PAIR(uc_min,  U_002D) // -
+UC_UNICODE_PAIR(uc_eq,   U_003D) // =
+UC_UNICODE_PAIR(uc_semi, U_003B) // ;
+UC_UNICODE_PAIR(uc_ques, U_003F) // ?
+UC_UNICODE_PAIR(uc_at, U_0040) // @
+
+// --- НИЖНИЙ РЯД ---
+UC_UNICODE_PAIR(uc_ampr, U_0026) // &
+UC_UNICODE_PAIR(uc_pipe, U_007C) // |
+UC_UNICODE_PAIR(uc_bsl,  U_005C) // \
+UC_UNICODE_PAIR(uc_sl,   U_002F) // /
+UC_UNICODE_PAIR(uc_dqt,  U_0022) // "
+UC_UNICODE_PAIR(uc_hash, U_0023) // #
+UC_UNICODE_PAIR(uc_ast,  U_002A) // *
+UC_UNICODE_PAIR(uc_caret, U_005E) // ^
+UC_UNICODE_PAIR(uc_undr, U_005F) // _
+UC_UNICODE_PAIR(uc_dllr, U_0024) // $
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
@@ -106,14 +147,13 @@
         };
 
         // LAYER 2: SYM (Все спецсимволы + кавычки)
-
         sym_layer {
             display-name = "SYM";
             bindings = <
-&none  &kp LBRC       &kp RBRC  &kp LPAR       &kp RPAR   &kp GRAVE                                    &mmv MOVE_UP                     &kp DOT    &kp PLUS      &kp PERCENT  &kp COLON  &kp EXCLAMATION  &kp TILDE
-&none  &kp LBKT       &kp RBKT  &kp LT         &kp GT     &kp APOSTROPHE               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp COMMA  &kp MINUS     &kp EQUAL    &kp SEMI   &kp QUESTION     &none
-&none  &kp AMPERSAND  &kp PIPE  &kp BACKSLASH  &kp SLASH  &kp DOUBLE_QUOTES  &trans                    &mmv MOVE_DOWN                   &kp HASH   &kp ASTERISK  &kp CARET    &kp UNDER  &kp DOLLAR       &none
-                                &trans         &trans     &trans                                                                        &trans     &trans        &trans
+        &none  &uc_lbrc  &uc_rbrc  &uc_lpar  &uc_rpar  &uc_grv                                &mmv MOVE_UP                     &uc_dot    &uc_plus   &uc_perc   &uc_col   &uc_excl  &uc_til
+        &none  &uc_lbkt  &uc_rbkt  &uc_lt    &uc_gt    &uc_apos               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &uc_com    &uc_min    &uc_eq     &uc_semi  &uc_ques  &uc_at
+        &none  &uc_ampr  &uc_pipe  &uc_bsl   &uc_sl    &uc_dqt      &trans                    &mmv MOVE_DOWN                   &uc_hash   &uc_ast    &uc_caret  &uc_undr  &uc_dllr  &none
+                                        &trans    &trans    &trans                                                                    &trans     &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
