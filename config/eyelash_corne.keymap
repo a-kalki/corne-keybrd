@@ -16,7 +16,7 @@
   minimum-length = <0>;            // Set to desired minimum input length
   linux-key = <LC(LS(U))>;         // Overwrite Linux compose key
   win-compose-key = <RALT>;        // Overwrite WinCompose compose key
-};;
+};
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
