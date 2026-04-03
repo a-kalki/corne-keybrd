@@ -100,46 +100,46 @@ layers:
   - $$mdi:backspace-reverse-outline$$
   SYM:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&uc_lbrc'
-  - '&uc_rbrc'
-  - '&uc_lpar'
-  - '&uc_rpar'
-  - '&uc_grv'
+  - '&uc 0x7B 0'
+  - '&uc 0x7D 0'
+  - '&uc 0x28 0'
+  - '&uc 0x29 0'
+  - '&uc 0x60 0'
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
-  - '&uc_dot'
-  - '&uc_plus'
-  - '&uc_perc'
-  - '&uc_col'
-  - '&uc_excl'
-  - '&uc_til'
+  - '&uc 0x2E 0'
+  - '&uc 0x2B 0'
+  - '&uc 0x25 0'
+  - '&uc 0x3A 0'
+  - '&uc 0x21 0'
+  - '&uc 0x7E 0'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&uc_lbkt'
-  - '&uc_rbkt'
-  - '&uc_lt'
-  - '&uc_gt'
-  - '&uc_apos'
+  - '&uc 0x5B 0'
+  - '&uc 0x5D 0'
+  - '&uc 0x3C 0'
+  - '&uc 0x3E 0'
+  - '&uc 0x27 0'
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - '&uc_com'
-  - '&uc_min'
-  - '&uc_eq'
-  - '&uc_semi'
-  - '&uc_ques'
-  - '&uc_at'
+  - '&uc 0x2C 0'
+  - '&uc 0x2D 0'
+  - '&uc 0x3D 0'
+  - '&uc 0x3B 0'
+  - '&uc 0x3F 0'
+  - '&uc 0x40 0'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&uc_ampr'
-  - '&uc_pipe'
-  - '&uc_bsl'
-  - '&uc_sl'
-  - '&uc_dqt'
+  - '&uc 0x26 0'
+  - '&uc 0x7C 0'
+  - '&uc 0x5C 0'
+  - '&uc 0x2F 0'
+  - '&uc 0x22 0'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - '&uc_hash'
-  - '&uc_ast'
-  - '&uc_caret'
-  - '&uc_undr'
-  - '&uc_dllr'
+  - '&uc 0x23 0'
+  - '&uc 0x2A 0'
+  - '&uc 0x5E 0'
+  - '&uc 0x5F 0'
+  - '&uc 0x24 0'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -229,8 +229,8 @@ layers:
   - OUT USB
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&uc_mod_win'
-  - '&uc_mod_linux'
+  - '&uc UC_SET_LINUX'
+  - '&uc UC_SET_WIN_COMPOSE'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F10
