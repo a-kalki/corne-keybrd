@@ -118,9 +118,9 @@
         sym_layer {
             display-name = "SYM";
             bindings = <
-              &none  &uc_lcurly   &uc_rcurly   &uc_lparen   &uc_rparen   &uc_grave                                    &mmv MOVE_UP                     &uc_dot     &uc_plus    &uc_percent  &uc_colon   &uc_excl    &uc_tilde
-              &none  &uc_lbkt     &uc_rbkt     &uc_lt       &uc_gt       &uc_apos                  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &uc_comma   &uc_minus   &uc_equal   &uc_semi    &uc_ques    &uc_at
-              &none  &uc_amps     &uc_pipe     &uc_bslash   &uc_fslash   &uc_dqt           &trans                    &mmv MOVE_DOWN                   &uc_hash    &uc_astrk   &uc_caret   &uc_under   &uc_dollar  &uc_defis
+              &none  &lcurly   &rcurly   &lparen   &rparen   &grave                                    &mmv MOVE_UP                     &dot     &plus    &percent  &colon   &excl    &tilde
+              &none  &lbkt     &rbkt     &lt       &gt       &apos                  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &comma   &minus   &equal   &semi    &ques    &at
+              &none  &amps     &pipe     &bslash   &fslash   &dqt           &trans                    &mmv MOVE_DOWN                   &hash    &astrk   &caret   &under   &dollar  &defis
                                               &trans      &trans      &trans                                                                        &trans      &trans       &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
