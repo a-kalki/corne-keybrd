@@ -155,10 +155,10 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: held}
   - '&mkp MB4'
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: held alternate}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&m_lt10'
+  - {t: '&m_dn10', type: held alternate}
+  - '&m_up10'
+  - '&m_rt10'
   - PG UP
   - HOME
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -186,8 +186,8 @@ layers:
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - '&m_lt5'
   - '&m_dn5'
-  - '&m_dn5'
   - '&m_up5'
+  - '&m_rt5'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:mouse-left-click-outline$$
