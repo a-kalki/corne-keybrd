@@ -100,47 +100,47 @@ layers:
   - $$mdi:backspace-reverse-outline$$
   SYM:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&uc 0x7B 0'
-  - '&uc 0x7D 0'
-  - '&uc 0x28 0'
-  - '&uc 0x29 0'
-  - '&uc 0x60 0'
+  - '&lcurly'
+  - '&rcurly'
+  - '&lparen'
+  - '&rparen'
+  - '&grave'
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
-  - '&uc 0x2E 0'
-  - '&uc 0x2B 0'
-  - '&uc 0x25 0'
-  - '&uc 0x3A 0'
-  - '&uc 0x21 0'
-  - '&uc 0x7E 0'
+  - '&dot'
+  - '&plus'
+  - '&percent'
+  - '&colon'
+  - '&excl'
+  - '&tilde'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&uc 0x5B 0'
-  - '&uc 0x5D 0'
-  - '&uc 0x3C 0'
-  - '&uc 0x3E 0'
-  - '&uc 0x27 0'
+  - '&lbkt'
+  - '&rbkt'
+  - '&lt'
+  - '&gt'
+  - '&apos'
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - '&uc 0x2C 0'
-  - '&uc 0x2D 0'
-  - '&uc 0x3D 0'
-  - '&uc 0x3B 0'
-  - '&uc 0x3F 0'
-  - '&uc 0x40 0'
+  - '&comma'
+  - '&minus'
+  - '&equal'
+  - '&semi'
+  - '&ques'
+  - '&at'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&uc 0x26 0'
-  - '&uc 0x7C 0'
-  - '&uc 0x5C 0'
-  - '&uc 0x2F 0'
-  - '&uc 0x22 0'
+  - '&amps'
+  - '&pipe'
+  - '&bslash'
+  - '&fslash'
+  - '&dqt'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - '&uc 0x23 0'
-  - '&uc 0x2A 0'
-  - '&uc 0x5E 0'
-  - '&uc 0x5F 0'
-  - '&uc 0x24 0'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&hash'
+  - '&astrk'
+  - '&caret'
+  - '&under'
+  - '&dollar'
+  - '&defis'
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -230,7 +230,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '&uc UC_SET_LINUX'
-  - '&uc UC_SET_WIN_COMPOSE'
+  - '&uc UC_SET_WIN_ALT'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F10
