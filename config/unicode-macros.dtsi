@@ -1,0 +1,470 @@
+/ {
+    macros {
+        uc_lcurly: uc_lcurly {
+            compatible = "zmk,behavior-macro";
+            label = "{";
+            #binding-cells = <0>;
+            bindings = <&uc 0x7B 0>;
+        };
+
+        uc_rcurly: uc_rcurly {
+            compatible = "zmk,behavior-macro";
+            label = "}";
+            #binding-cells = <0>;
+            bindings = <&uc 0x7D 0>;
+        };
+
+        uc_lparen: uc_lparen {
+            compatible = "zmk,behavior-macro";
+            label = "(";
+            #binding-cells = <0>;
+            bindings = <&uc 0x28 0>;
+        };
+
+        uc_rparen: uc_rparen {
+            compatible = "zmk,behavior-macro";
+            label = ")";
+            #binding-cells = <0>;
+            bindings = <&uc 0x29 0>;
+        };
+
+        uc_grave: uc_grave {
+            compatible = "zmk,behavior-macro";
+            label = "`";
+            #binding-cells = <0>;
+            bindings = <&uc 0x60 0>;
+        };
+
+        uc_lbkt: uc_lbkt {
+            compatible = "zmk,behavior-macro";
+            label = "[";
+            #binding-cells = <0>;
+            bindings = <&uc 0x5B 0>;
+        };
+
+        uc_rbkt: uc_rbkt {
+            compatible = "zmk,behavior-macro";
+            label = "]";
+            #binding-cells = <0>;
+            bindings = <&uc 0x5D 0>;
+        };
+
+        uc_lt: uc_lt {
+            compatible = "zmk,behavior-macro";
+            label = "<";
+            #binding-cells = <0>;
+            bindings = <&uc 0x3C 0>;
+        };
+
+        uc_gt: uc_gt {
+            compatible = "zmk,behavior-macro";
+            label = ">";
+            #binding-cells = <0>;
+            bindings = <&uc 0x3E 0>;
+        };
+
+        uc_apos: uc_apos {
+            compatible = "zmk,behavior-macro";
+            label = "'";
+            #binding-cells = <0>;
+            bindings = <&uc 0x27 0>;
+        };
+
+        uc_dqt: uc_dqt {
+            compatible = "zmk,behavior-macro";
+            label = "\"";
+            #binding-cells = <0>;
+            bindings = <&uc 0x22 0>;
+        };
+
+        uc_amps: uc_amps {
+            compatible = "zmk,behavior-macro";
+            label = "&";
+            #binding-cells = <0>;
+            bindings = <&uc 0x26 0>;
+        };
+
+        uc_pipe: uc_pipe {
+            compatible = "zmk,behavior-macro";
+            label = "|";
+            #binding-cells = <0>;
+            bindings = <&uc 0x7C 0>;
+        };
+
+        uc_bslash: uc_bslash {
+            compatible = "zmk,behavior-macro";
+            label = "\\";
+            #binding-cells = <0>;
+            bindings = <&uc 0x5C 0>;
+        };
+
+        uc_fslash: uc_fslash {
+            compatible = "zmk,behavior-macro";
+            label = "/";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2F 0>;
+        };
+
+        uc_hash: uc_hash {
+            compatible = "zmk,behavior-macro";
+            label = "#";
+            #binding-cells = <0>;
+            bindings = <&uc 0x23 0>;
+        };
+
+        uc_astrk: uc_astrk {
+            compatible = "zmk,behavior-macro";
+            label = "*";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2A 0>;
+        };
+
+        uc_caret: uc_caret {
+            compatible = "zmk,behavior-macro";
+            label = "^";
+            #binding-cells = <0>;
+            bindings = <&uc 0x5E 0>;
+        };
+
+        uc_under: uc_under {
+            compatible = "zmk,behavior-macro";
+            label = "_";
+            #binding-cells = <0>;
+            bindings = <&uc 0x5F 0>;
+        };
+
+        uc_dollar: uc_dollar {
+            compatible = "zmk,behavior-macro";
+            label = "$";
+            #binding-cells = <0>;
+            bindings = <&uc 0x24 0>;
+        };
+
+        uc_percent: uc_percent {
+            compatible = "zmk,behavior-macro";
+            label = "%";
+            #binding-cells = <0>;
+            bindings = <&uc 0x25 0>;
+        };
+
+        uc_plus: uc_plus {
+            compatible = "zmk,behavior-macro";
+            label = "+";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2B 0>;
+        };
+
+        uc_tilde: uc_tilde {
+            compatible = "zmk,behavior-macro";
+            label = "~";
+            #binding-cells = <0>;
+            bindings = <&uc 0x7E 0>;
+        };
+
+        uc_excl: uc_excl {
+            compatible = "zmk,behavior-macro";
+            label = "!";
+            #binding-cells = <0>;
+            bindings = <&uc 0x21 0>;
+        };
+
+        uc_colon: uc_colon {
+            compatible = "zmk,behavior-macro";
+            label = ":";
+            #binding-cells = <0>;
+            bindings = <&uc 0x3A 0>;
+        };
+
+        uc_semi: uc_semi {
+            compatible = "zmk,behavior-macro";
+            label = ";";
+            #binding-cells = <0>;
+            bindings = <&uc 0x3B 0>;
+        };
+
+        uc_ques: uc_ques {
+            compatible = "zmk,behavior-macro";
+            label = "?";
+            #binding-cells = <0>;
+            bindings = <&uc 0x3F 0>;
+        };
+
+        uc_at: uc_at {
+            compatible = "zmk,behavior-macro";
+            label = "@";
+            #binding-cells = <0>;
+            bindings = <&uc 0x40 0>;
+        };
+
+        uc_dot: uc_dot {
+            compatible = "zmk,behavior-macro";
+            label = ".";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2E 0>;
+        };
+
+        uc_minus: uc_minus {
+            compatible = "zmk,behavior-macro";
+            label = "-";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2D 0>;
+        };
+
+        uc_equal: uc_equal {
+            compatible = "zmk,behavior-macro";
+            label = "=";
+            #binding-cells = <0>;
+            bindings = <&uc 0x3D 0>;
+        };
+
+        uc_comma: uc_comma {
+            compatible = "zmk,behavior-macro";
+            label = ",";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2C 0>;
+        };
+
+        uc_endash: uc_endash {          // 0x2010 — en dash
+            compatible = "zmk,behavior-macro";
+            label = "–";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2010 0>;
+        };
+    };
+};/ unicode-macros.dtsi
+// Макросы для Unicode символов — keymap-drawer будет показывать нормальные символы
+
+/ {
+    macros {
+        uc_lcurly: uc_lcurly {
+            compatible = "zmk,behavior-macro";
+            label = "{";
+            #binding-cells = <0>;
+            bindings = <&uc 0x7B 0>;
+        };
+
+        uc_rcurly: uc_rcurly {
+            compatible = "zmk,behavior-macro";
+            label = "}";
+            #binding-cells = <0>;
+            bindings = <&uc 0x7D 0>;
+        };
+
+        uc_lparen: uc_lparen {
+            compatible = "zmk,behavior-macro";
+            label = "(";
+            #binding-cells = <0>;
+            bindings = <&uc 0x28 0>;
+        };
+
+        uc_rparen: uc_rparen {
+            compatible = "zmk,behavior-macro";
+            label = ")";
+            #binding-cells = <0>;
+            bindings = <&uc 0x29 0>;
+        };
+
+        uc_grave: uc_grave {
+            compatible = "zmk,behavior-macro";
+            label = "`";
+            #binding-cells = <0>;
+            bindings = <&uc 0x60 0>;
+        };
+
+        uc_lbkt: uc_lbkt {
+            compatible = "zmk,behavior-macro";
+            label = "[";
+            #binding-cells = <0>;
+            bindings = <&uc 0x5B 0>;
+        };
+
+        uc_rbkt: uc_rbkt {
+            compatible = "zmk,behavior-macro";
+            label = "]";
+            #binding-cells = <0>;
+            bindings = <&uc 0x5D 0>;
+        };
+
+        uc_lt: uc_lt {
+            compatible = "zmk,behavior-macro";
+            label = "<";
+            #binding-cells = <0>;
+            bindings = <&uc 0x3C 0>;
+        };
+
+        uc_gt: uc_gt {
+            compatible = "zmk,behavior-macro";
+            label = ">";
+            #binding-cells = <0>;
+            bindings = <&uc 0x3E 0>;
+        };
+
+        uc_apos: uc_apos {
+            compatible = "zmk,behavior-macro";
+            label = "'";
+            #binding-cells = <0>;
+            bindings = <&uc 0x27 0>;
+        };
+
+        uc_dqt: uc_dqt {
+            compatible = "zmk,behavior-macro";
+            label = "\"";
+            #binding-cells = <0>;
+            bindings = <&uc 0x22 0>;
+        };
+
+        uc_amps: uc_amps {
+            compatible = "zmk,behavior-macro";
+            label = "&";
+            #binding-cells = <0>;
+            bindings = <&uc 0x26 0>;
+        };
+
+        uc_pipe: uc_pipe {
+            compatible = "zmk,behavior-macro";
+            label = "|";
+            #binding-cells = <0>;
+            bindings = <&uc 0x7C 0>;
+        };
+
+        uc_bslash: uc_bslash {
+            compatible = "zmk,behavior-macro";
+            label = "\\";
+            #binding-cells = <0>;
+            bindings = <&uc 0x5C 0>;
+        };
+
+        uc_fslash: uc_fslash {
+            compatible = "zmk,behavior-macro";
+            label = "/";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2F 0>;
+        };
+
+        uc_hash: uc_hash {
+            compatible = "zmk,behavior-macro";
+            label = "#";
+            #binding-cells = <0>;
+            bindings = <&uc 0x23 0>;
+        };
+
+        uc_astrk: uc_astrk {
+            compatible = "zmk,behavior-macro";
+            label = "*";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2A 0>;
+        };
+
+        uc_caret: uc_caret {
+            compatible = "zmk,behavior-macro";
+            label = "^";
+            #binding-cells = <0>;
+            bindings = <&uc 0x5E 0>;
+        };
+
+        uc_under: uc_under {
+            compatible = "zmk,behavior-macro";
+            label = "_";
+            #binding-cells = <0>;
+            bindings = <&uc 0x5F 0>;
+        };
+
+        uc_dollar: uc_dollar {
+            compatible = "zmk,behavior-macro";
+            label = "$";
+            #binding-cells = <0>;
+            bindings = <&uc 0x24 0>;
+        };
+
+        uc_percent: uc_percent {
+            compatible = "zmk,behavior-macro";
+            label = "%";
+            #binding-cells = <0>;
+            bindings = <&uc 0x25 0>;
+        };
+
+        uc_plus: uc_plus {
+            compatible = "zmk,behavior-macro";
+            label = "+";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2B 0>;
+        };
+
+        uc_tilde: uc_tilde {
+            compatible = "zmk,behavior-macro";
+            label = "~";
+            #binding-cells = <0>;
+            bindings = <&uc 0x7E 0>;
+        };
+
+        uc_excl: uc_excl {
+            compatible = "zmk,behavior-macro";
+            label = "!";
+            #binding-cells = <0>;
+            bindings = <&uc 0x21 0>;
+        };
+
+        uc_colon: uc_colon {
+            compatible = "zmk,behavior-macro";
+            label = ":";
+            #binding-cells = <0>;
+            bindings = <&uc 0x3A 0>;
+        };
+
+        uc_semi: uc_semi {
+            compatible = "zmk,behavior-macro";
+            label = ";";
+            #binding-cells = <0>;
+            bindings = <&uc 0x3B 0>;
+        };
+
+        uc_ques: uc_ques {
+            compatible = "zmk,behavior-macro";
+            label = "?";
+            #binding-cells = <0>;
+            bindings = <&uc 0x3F 0>;
+        };
+
+        uc_at: uc_at {
+            compatible = "zmk,behavior-macro";
+            label = "@";
+            #binding-cells = <0>;
+            bindings = <&uc 0x40 0>;
+        };
+
+        uc_dot: uc_dot {
+            compatible = "zmk,behavior-macro";
+            label = ".";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2E 0>;
+        };
+
+        uc_defis: uc_defis {
+            compatible = "zmk,behavior-macro";
+            label = "—";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2010 0>;
+        };
+
+        uc_equal: uc_equal {
+            compatible = "zmk,behavior-macro";
+            label = "=";
+            #binding-cells = <0>;
+            bindings = <&uc 0x3D 0>;
+        };
+
+        uc_comma: uc_comma {
+            compatible = "zmk,behavior-macro";
+            label = ",";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2C 0>;
+        };
+
+        uc_endash: uc_endash {          // 0x2010 — en dash
+            compatible = "zmk,behavior-macro";
+            label = "–";
+            #binding-cells = <0>;
+            bindings = <&uc 0x2010 0>;
+        };
+    };
+};
