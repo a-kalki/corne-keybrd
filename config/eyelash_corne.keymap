@@ -81,6 +81,30 @@
             #binding-cells = <0>;
             bindings = <&kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT>;
         };
+
+        m_up10: m_up10 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&m_up5 &m_up5>;
+        };
+
+        m_dn10: m_dn10 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&m_dn5 &m_dn5>;
+        };
+
+        m_lt10: m_lt10 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&m_lt5 &m_lt5>;
+        };
+
+        m_rt10: m_rt10 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&m_rt5 &m_rt5>;
+        };
     };
 
     keymap {
@@ -131,9 +155,9 @@
         nav_layer {
             display-name = "NAV";
             bindings = <
-&none  &none           &none           &none         &none            &mkp MB4                             &mmv MOVE_UP                     &none           &none           &none         &none      &kp PG_UP      &kp HOME
+&none  &none           &none           &none         &none            &mkp MB4                             &mmv MOVE_UP                     &m_lt10         &m_dn10         &m_up10       &m_rt10     &kp PG_UP      &kp HOME
 &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &mkp MB5             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &kp PAGE_DOWN  &kp END
-&none  &none           &none           &none         &none            &none      &trans                    &mmv MOVE_DOWN                   &m_lt5          &m_dn5          &m_dn5        &m_up5     &none          &none
+&none  &none           &none           &none         &none            &none      &trans                    &mmv MOVE_DOWN                   &m_lt5          &m_dn5          &m_up5        &m_rt5     &none          &none
                                        &mkp LCLK     &mkp MCLK        &mkp RCLK                                                             &trans          &trans          &trans
             >;
 
