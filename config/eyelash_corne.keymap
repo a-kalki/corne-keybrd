@@ -170,10 +170,10 @@
         ru_sym_layer {
             display-name = "RU_SYM";
             bindings = <
-&kp GRAVE   &kp EXCL  &kp DQT   &kp RA(N3) &kp SEMI   &kp PRCNT              &none         &kp COLON  &kp QMARK &kp ASTRK  &kp LPAR  &kp RPAR  &kp UNDER
-&caps_word  &none     &none     &none      &none      &none           &none  &none  &none  &none      &kp J     &kp K      &kp L     &kp SEMI  &kp BSLH
-&none       &none     &none     &none      &none      &none  &none           &none         &none      &none     &none      &none     &none     &none
-                                &none      &none      &none                                &none      &none     &none
+&kp GRAVE   &kp EXCL  &kp RA(N2)  &kp RA(N3) &kp RA(N4)   &kp PRCNT              &none         &kp RA(N6)  &kp RA(N7) &kp ASTRK  &kp LPAR  &kp RPAR  &kp UNDER
+&caps_word  &none     &none       &none      &none        &none           &none  &none  &none  &none       &kp J      &kp K      &kp L     &kp SEMI  &kp BSLH
+&none       &none     &none       &none      &none        &none  &none           &none         &none       &none      &none      &none     &none     &none
+                                  &none      &none        &none                                &none       &none      &none
             >;
         };
     };
