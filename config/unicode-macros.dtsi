@@ -1,10 +1,24 @@
 / {
     macros {
-        copyrt: copyrt {
+        deg: deg {
             compatible = "zmk,behavior-macro";
-            label = "{";
+            label = "°";
             #binding-cells = <0>;
-            bindings = <&uc 0xA9 0>;
+            bindings = <&uc 0xB0 0>;
+        };
+
+        laquo: laquo {
+            compatible = "zmk,behavior-macro";
+            label = "«";
+            #binding-cells = <0>;
+            bindings = <&uc 0xAB 0>;
+        };
+
+        raquo: raquo {
+            compatible = "zmk,behavior-macro";
+            label = "»";
+            #binding-cells = <0>;
+            bindings = <&uc 0xBB 0>
         };
 
         lcurly: lcurly {
@@ -56,7 +70,7 @@
             bindings = <&uc 0x5D 0>;
         };
 
-        lt_: lt_ {
+        uc_lt: uc_lt {
             compatible = "zmk,behavior-macro";
             label = "\<";
             #binding-cells = <0>;

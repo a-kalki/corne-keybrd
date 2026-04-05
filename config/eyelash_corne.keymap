@@ -132,10 +132,10 @@
         sym_layer {
             display-name = "SYM";
             bindings = <
-             &copyrt  &lcurly   &rcurly   &lparen   &rparen   &grave                                    &mmv MOVE_UP                    &dot     &plus    &percent  &colon   &excl    &tilde
-             &endash  &lbkt     &rbkt     &lt_       &gt       &apos                  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT   &comma   &minus   &equal    &semi    &ques    &at
-             &none    &amps     &pipe     &bslash   &fslash   &dqt           &trans                    &mmv MOVE_DOWN                   &hash    &astrk   &caret    &under   &dollar  &none
-                                                &trans      &trans      &trans                                                                        &trans      &trans       &trans
+              &copyrt  &lcurly   &rcurly   &lparen   &rparen   &grave                                    &mmv MOVE_UP                    &dot     &plus    &percent  &colon   &excl    &tilde
+              &laquo   &lbkt     &rbkt     &uc_lt       &gt       &apos                  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT   &comma   &minus   &equal    &semi    &ques    &at
+              &raquo   &amps     &pipe     &bslash   &fslash   &dqt           &trans                    &mmv MOVE_DOWN                   &hash    &astrk   &caret    &under   &dollar  &endash
+                                                 &trans      &trans      &trans                                                                        &trans      &trans       &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -166,15 +166,15 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        // LAYER 5: EN_SYM (символы занятые по модификаторами)
+        // LAYER 5: EN_SYM (символы занятые по модификаторам)
         en_sym_layer {
             display-name = "EN_SYM";
             bindings = <
-&kp GRAVE   &kp EXCL  &kp AT  &kp HASH   &kp DLLR   &kp PRCNT              &none         &kp COLON  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &kp MINUS
-&caps_word  &none     &none   &none      &none      &none           &none  &none  &none  &none       &kp J    &kp K      &kp L     &kp SEMI  &kp EQUAL
-&none       &none     &none   &none      &none      &none  &none           &none         &none       &none    &none      &none     &none     &kp BSLH
-                              &none      &none      &none                                &none       &none    &none
-            >;
+              &kp GRAVE   &kp EXCL  &kp AT  &kp HASH   &kp DLLR   &kp PRCNT              &none         &kp COLON  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR   &kp MINUS
+              &caps_word  &none     &none   &none      &none      &none           &none  &none  &none  &none      &kp J     &kp K      &kp L     &kp SEMI   &kp EQUAL
+              &nbsp      &h_lt      &gt     &amp       &quot      &apos    &none         &none         &ensp      &emsp     &copy      &euro     &none      &kp BSLH
+                                            &none      &none      &none                                &none      &none     &none
+                        >;
         };
     };
 };
