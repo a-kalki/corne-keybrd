@@ -172,7 +172,7 @@
             bindings = <
 &kp GRAVE   &kp EXCL  &kp DQT   &kp RA(N3) &kp SEMI   &kp PRCNT              &none         &kp COLON  &kp QMARK &kp ASTRK  &kp LPAR  &kp RPAR  &kp UNDER
 &caps_word  &none     &none     &none      &none      &none           &none  &none  &none  &none      &kp J     &kp K      &kp L     &kp SEMI  &kp BSLH
-&none       &none     &none     &none      &none      &none  &none           &none         &none      &none     &none      &none     &none     &kp none
+&none       &none     &none     &none      &none      &none  &none           &none         &none      &none     &none      &none     &none     &none
                                 &none      &none      &none                                &none      &none     &none
             >;
         };
