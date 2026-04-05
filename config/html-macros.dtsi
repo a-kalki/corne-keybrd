@@ -1,4 +1,3 @@
-/* ====================== HTML Entities as text ====================== */
 / {
     macros {
       nbsp: nbsp {
@@ -71,4 +70,4 @@
           bindings = <&kp AMPS &kp E &kp U &kp R &kp O &kp SEMI>;
       };
     };
-}
+};
