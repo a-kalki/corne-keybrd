@@ -18,7 +18,7 @@
             compatible = "zmk,behavior-macro";
             label = "»";
             #binding-cells = <0>;
-            bindings = <&uc 0xBB 0>
+            bindings = <&uc 0xBB 0>;
         };
 
         lcurly: lcurly {
