@@ -12,6 +12,7 @@
 #include <behaviors/unicode.dtsi>
 
 #include "unicode-macros.dtsi"
+#include "html-macros.dtsi"
 #include "move-macros.dtsi"
 #include "key-labels-42.dtsi"
 
