@@ -22,7 +22,7 @@
 };
 
 &mt {
-  quick-tap-ms = <150>;
+  quick-tap-ms = <200>;
 };
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
@@ -106,10 +106,10 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&ltl 4 TAB  &kp Q        &kp W        &kp E         &ltl 3 R       &kp T                               &kp UP                &kp Y       &ltr 3 U       &kp I         &kp O        &kp P           &ltr 4 LBKT
-&kp LSHFT  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &ltl 5 G                   &kp LEFT  &kp ENTER  &kp RIGHT  &ltr 5 H     &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  &kp SQT
-&kp LCTRL  &kp Z        &kp X        &kp C         &kp V         &kp B       &kp C_MUTE              &kp DOWN              &kp N       &kp M         &kp COMMA     &kp DOT      &kp FSLH        &kp RBKT
-                                     &lt 2 ESC     &kp SPACE     &lt 1 CAPS                                                &lt 1 BSPC  &kp ENTER     &lt 2 DELETE
+&ltl 4 TAB &kp Q        &kp W        &kp E         &ltl 3 R      &kp T                               &kp UP                 &kp Y        &ltr 3 U       &kp I         &kp O             &kp P           &ltr 4 LBKT
+&kp LSHFT  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &ltl 5 G                   &kp LEFT  &kp ENTER  &kp RIGHT  &ltr 5 H     &hmr RSHFT J   &hmr RCTRL K  &hmr RIGHT_ALT L  &hmr RGUI SEMI  &kp SQT
+&kp LCTRL  &kp Z        &kp X        &kp C         &kp V         &kp B       &kp C_MUTE              &kp DOWN               &kp N        &kp M          &kp COMMA     &kp DOT           &kp FSLH        &kp RBKT
+                                     &lt 2 ESC     &kp SPACE     &lt 1 CAPS                                                 &lt 1 BSPC   &kp ENTER      &lt 2 DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -166,14 +166,14 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        // LAYER 5: NUR_KEYS (символы занятые по модификаторами)
-        nur_keys_layer {
-            display-name = "N_KEYS";
+        // LAYER 5: VIM_KEYS (символы занятые по модификаторами)
+        vim_keys_layer {
+            display-name = "VIM_KEYS";
             bindings = <
-&caps_word  &none     &none     &kp E      &kp R      &none                  &none         &none  &kp U      &kp I      &none     &none     &kp GRAVE
-&none       &kp A     &kp S     &kp D      &kp F      &kp G           &none  &none  &none  &kp H  &kp J      &kp K      &kp L     &kp SEMI  &none
-&none       &none     &none     &none      &none      &none  &none           &none         &none  &none      &none      &none     &none     &none
-                                &none      &none      &none                                &none  &none      &none
+&kp GRAVE   &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                 &none         &kp N6  &kp N7   &kp N8   &kp N9  &kp N0    &kp MINUS
+&caps_word  &none     &none     &none      &none      &none           &none  &none  &none  &none   &kp J    &kp K    &kp L   &kp SEMI  &kp EQUAL
+&none       &none     &none     &none      &none      &none  &none           &none         &none   &none    &none    &none   &none     &kp BSLH
+                                &none      &none      &none                                &none   &none    &none
             >;
         };
     };
