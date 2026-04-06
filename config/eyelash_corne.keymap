@@ -11,10 +11,11 @@
 
 #include <behaviors/unicode.dtsi>
 
-#include "unicode-macros.dtsi"
-#include "html-macros.dtsi"
-#include "move-macros.dtsi"
 #include "key-labels-42.dtsi"
+#include "hmr.dtsi"
+#include "unicode-macros.dtsi"
+#include "nur-macros.dtsi"
+#include "move-macros.dtsi"
 
 &uc {
   default-mode = <UC_MODE_LINUX>;  // Default to Linux input system
@@ -31,151 +32,112 @@
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
-    time-to-max-speed-ms = <100>;       // 300
-    acceleration-exponent = <1>;      // 0
-    delay-ms = <0>;                   // 0
+  time-to-max-speed-ms = <100>;       // 300
+  acceleration-exponent = <1>;      // 0
+  delay-ms = <0>;                   // 0
 };
 
 &mmv {
-    time-to-max-speed-ms = <800>;
-    acceleration-exponent = <1>;
-    trigger-period-ms = <16>;
+  time-to-max-speed-ms = <800>;
+  acceleration-exponent = <1>;
+  trigger-period-ms = <16>;
 };
 
 &soft_off { hold-time-ms = <2000>; };
 
 / {
-    behaviors {
-      // Левый hand — моды срабатывают, когда прерывает правая рука + thumbs
-      hml: hml {
-          compatible = "zmk,behavior-hold-tap";
-          label = "HOME_ROW_MODS_LEFT";
-          #binding-cells = <2>;
-          flavor = "balanced";
-          tapping-term-ms = <200>;
-          require-prior-idle-ms = <150>;
-          bindings = <&kp>, <&kp>;
-          hold-trigger-key-positions = <KEYS_R THUMBS>;   // только правая половина + большие пальцы
-          hold-trigger-on-release;
-      };
-
-      // Правый hand — моды срабатывают, когда прерывает левая рука + thumbs
-      hmr: hmr {
-          compatible = "zmk,behavior-hold-tap";
-          label = "HOME_ROW_MODS_RIGHT";
-          #binding-cells = <2>;
-          flavor = "balanced";
-          tapping-term-ms = <200>;
-          require-prior-idle-ms = <150>;
-          bindings = <&kp>, <&kp>;
-          hold-trigger-key-positions = <KEYS_L THUMBS>;   // только левая половина + большие пальцы
-          hold-trigger-on-release;
-      };
-
-      /* === Layer Taps с защитой от ложных срабатываний для hmr слоев === */
-      ltl: ltl {
-          compatible = "zmk,behavior-hold-tap";
-          label = "LAYER_TAP_LEFT";
-          #binding-cells = <2>;
-          flavor = "tap-preferred";
-          tapping-term-ms = <200>;
-          quick-tap-ms = <150>;
-          require-prior-idle-ms = <150>;
-          bindings = <&mo>, <&kp>;
-          hold-trigger-key-positions = <KEYS_R THUMBS>;
-          hold-trigger-on-release;
-      };
-
-      ltr: ltr {
-          compatible = "zmk,behavior-hold-tap";
-          label = "LAYER_TAP_RIGHT";
-          #binding-cells = <2>;
-          flavor = "tap-preferred";
-          tapping-term-ms = <200>;
-          quick-tap-ms = <150>;
-          require-prior-idle-ms = <150>;
-          bindings = <&mo>, <&kp>;
-          hold-trigger-key-positions = <KEYS_L THUMBS>;
-          hold-trigger-on-release;
-      };
+  macros {
+    uc_win: uc_win { // тройная обр. кавычка
+      compatible = "zmk,behavior-macro";
+      label = "UC_WINDOWS";
+      #binding-cells = <0>;
+      bindings = <&uc UC_SET_WIN_COMPOSE>;
     };
 
-    keymap {
-        compatible = "zmk,keymap";
+    uc_linux: uc_linux { // тройная обр. кавычка
+      compatible = "zmk,behavior-macro";
+      label = "UC_LINUX";
+      #binding-cells = <0>;
+      bindings = <&uc UC_SET_LINUX>;
+    };
+  };
 
-        // LAYER 0: QWERTY
-        default_layer {
-            display-name = "QWERTY";
-            bindings = <
+  keymap {
+    compatible = "zmk,keymap";
+
+    // LAYER 0: QWERTY
+    default_layer {
+      display-name = "QWERTY";
+      bindings = <
 &ltl 4 TAB &kp Q        &kp W        &kp E         &ltl 3 R      &kp T                               &kp UP                 &kp Y        &ltr 3 U       &kp I         &kp O        &kp P           &ltr 4 LBKT
-&kp LSHFT  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &ltl 5 G                   &kp LEFT  &kp ENTER  &kp RIGHT  &ltr 5 H     &hmr RSHFT J   &hmr RCTRL K  &hmr LALT L  &hmr RGUI SEMI  &kp SQT
+&kp LSHFT  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &ltl 2 G                   &kp LEFT  &kp ENTER  &kp RIGHT  &ltr 2 H     &hmr RSHFT J   &hmr RCTRL K  &hmr LALT L  &hmr RGUI SEMI  &kp SQT
 &kp LCTRL  &kp Z        &kp X        &kp C         &kp V         &kp B       &kp C_MUTE              &kp DOWN               &kp N        &kp M          &kp COMMA     &kp DOT      &kp FSLH        &kp RBKT
-                                     &lt 2 ESC     &kp SPACE     &lt 1 CAPS                                                 &lt 1 BSPC   &kp ENTER      &lt 2 DELETE
-            >;
+                                     &lt 5 ESC     &kp SPACE     &lt 1 CAPS                                                 &lt 1 BSPC   &kp ENTER      &lt 5 DELETE
+      >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
 
-        // LAYER 1: NUM (Числа и Математика)
-        num_layer {
-            display-name = "NUM";
-            bindings = <
-&kp PLUS   &kp N7  &kp N8  &kp N9    &kp ASTERISK  &none                                &mmv MOVE_UP                     &kp KP_PLUS    &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_ASTERISK  &none
-&kp MINUS  &kp N4  &kp N5  &kp N6    &kp SLASH     &kp EQUAL            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp KP_MINUS   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DIVIDE    &kp KP_EQUAL
-&kp N0     &kp N1  &kp N2  &kp N3    &kp DOT       &none      &trans                    &mmv MOVE_DOWN                   &kp KP_N0      &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT       &kp KP_NUMLOCK
-                           &kp ESC   &trans        &kp CAPS                                                              &kp BACKSPACE  &trans     &kp DELETE
-            >;
+    // LAYER 1: NUM (Числа и Математика)
+    num_layer {
+      display-name = "NUM";
+      bindings = <
+&kp PLUS   &kp N7  &kp N8  &kp N9    &kp ASTRK  &none                        &mmv MOVE_UP                     &kp KP_PLUS    &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_ASTERISK  &none
+&kp MINUS  &kp N4  &kp N5  &kp N6    &kp SLASH  &kp EQUAL    &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp KP_MINUS   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DIVIDE    &kp KP_EQUAL
+&kp N0     &kp N1  &kp N2  &kp N3    &kp DOT    &none      &trans            &mmv MOVE_DOWN                   &kp KP_N0      &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT       &kp KP_NUMLOCK
+                           &kp ESC   &trans     &kp CAPS                                                              &kp BACKSPACE  &trans     &kp DELETE
+      >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
 
-        // LAYER 2: SYM (Все спецсимволы + кавычки)
-        sym_layer {
-            display-name = "SYM";
-            bindings = <
-              &deg     &lcurly   &rcurly   &lparen   &rparen   &grave                                    &mmv MOVE_UP                    &dot     &plus    &percent  &colon   &excl    &tilde
-              &laquo   &lbkt     &rbkt     &uc_lt       &gt       &apos                  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT   &comma   &minus   &equal    &semi    &ques    &at
-              &raquo   &amps     &pipe     &bslash   &fslash   &dqt           &trans                    &mmv MOVE_DOWN                   &hash    &astrk   &caret    &under   &dollar  &endash
-                                                 &trans      &trans      &trans                                                                        &trans      &trans       &trans
-            >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
+    // LAYER 2: SYM (Символы занятые по модификаторам)
+    sym_layer {
+      display-name = "SYM";
+      bindings = <
+&kp GRAVE    &kp EXCL   &kp AT    &kp HASH     &kp DLLR     &kp PRCNT              &none           &kp CARET    &kp AMPS    &kp ASTRK    &kp LPAR    &kp RPAR   &kp MINUS
+&caps_word   &none      &none     &none        &none        &none           &none  &none  &none    &kp H        &kp J       &kp K        &kp L       &none      &kp EQUAL
+&none        &none      &none     &none        &none        &v_grave    &none      &none           &none        &none       &none        &none       &none      &kp BSLH
+                                  &none        &none        &none                                  &none        &none       &none
+      >;
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
 
-        // LAYER 3: NAV (Мышь слева / Стрелки HJKL справа + x5 макросы)
-        nav_layer {
-            display-name = "NAV";
-            bindings = <
+    // LAYER 3: NAV (Мышь слева / Курсор справа + x5_10 макросы)
+    nav_layer {
+      display-name = "NAV";
+      bindings = <
 &none  &none           &none           &none         &none            &mkp MB4                             &mmv MOVE_UP                     &m_lt10         &m_dn10         &m_up10       &m_rt10     &kp PG_UP      &kp HOME
 &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &mkp MB5             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &kp PAGE_DOWN  &kp END
 &none  &none           &none           &none         &none            &none      &trans                    &mmv MOVE_DOWN                   &m_lt5          &m_dn5          &m_up5        &m_rt5     &none          &none
                                        &mkp LCLK     &mkp MCLK        &mkp RCLK                                                             &trans          &trans          &trans
-            >;
+      >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
 
-        // LAYER 4: SYS (F-клавиши по сетке NUM)
-        sys_layer {
-            display-name = "SYS";
-            bindings = <
+    // LAYER 4: SYS (F-клавиши по сетке NUM)
+    sys_layer {
+      display-name = "SYS";
+      bindings = <
 &bt BT_CLR      &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2    &bt BT_SEL 1  &bt BT_SEL 0                         &none                    &kp F12      &kp F7      &kp F8  &kp F9  &none  &kp PRINTSCREEN
 &bt BT_CLR_ALL  &none         &none         &none           &none         &none                   &kp K_SLEEP  &kp K_POWER  &kp K_LOCK  &kp F11      &kp F4      &kp F5  &kp F6  &none  &kp INS
-&out OUT_BLE    &out OUT_USB  &none         &none           &uc UC_SET_LINUX  &uc UC_SET_WIN_COMPOSE  &trans   &none                    &kp F10      &kp F1      &kp F2  &kp F3  &none  &none
+&out OUT_BLE    &out OUT_USB  &none         &none           &uc_linux     &uc_win        &trans   &none                    &kp F10      &kp F1      &kp F2  &kp F3  &none  &none
                                             &studio_unlock  &sys_reset    &bootloader                                                   &bootloader  &sys_reset  &none
-            >;
+      >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        // LAYER 5: SYM_2 (символы занятые по модификаторам)
-        sym_2_layer {
-            display-name = "SYM_2";
-            bindings = <
-              &kp GRAVE    &kp EXCL   &kp AT    &kp HASH     &kp DLLR     &kp PRCNT              &none           &kp COLON    &kp AMPS    &kp ASTRK    &kp LPAR    &kp RPAR   &kp MINUS
-              &caps_word   &none      &none     &none        &none        &none           &none  &none  &none    &kp H        &kp J       &kp K        &kp L       &none      &kp EQUAL
-              &h_nbsp      &h_lt      &h_gt     &h_amp       &h_quot      &h_apos    &none         &none         &h_ensp      &h_emsp     &h_copy      &h_euro     &none      &kp BSLH
-                                                &none        &none        &none                                  &none        &none       &none
-            >;
-        };
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
+
+    // LAYER 5: UN_SYM (символы через unicode последовательности)
+    un_sym_layer {
+      display-name = "UN_SYM";
+      bindings = <
+&deg     &lcurly   &rcurly   &lparen   &rparen   &grave                                    &mmv MOVE_UP                    &dot     &plus    &percent  &colon   &excl    &tilde
+&laquo   &lbkt     &rbkt     &uc_lt    &gt       &apos                  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT    &comma   &minus   &equal    &semi    &ques    &at
+&raquo   &amps     &pipe     &bslash   &fslash   &dqt           &trans                    &mmv MOVE_DOWN                   &hash    &astrk   &caret    &under   &dollar  &endash
+                              &trans      &trans      &trans                                                                        &trans      &trans       &trans
+      >;
+    };
+  };
 };

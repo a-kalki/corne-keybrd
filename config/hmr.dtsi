@@ -1,0 +1,56 @@
+/ {
+  behaviors {
+    // Левый hand — моды срабатывают, когда прерывает правая рука + thumbs
+    hml: hml {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOME_ROW_MODS_LEFT";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <200>;
+      require-prior-idle-ms = <150>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <KEYS_R THUMBS>;   // только правая половина + большие пальцы
+      hold-trigger-on-release;
+    };
+
+    // Правый hand — моды срабатывают, когда прерывает левая рука + thumbs
+    hmr: hmr {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOME_ROW_MODS_RIGHT";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <200>;
+      require-prior-idle-ms = <150>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <KEYS_L THUMBS>;   // только левая половина + большие пальцы
+      hold-trigger-on-release;
+    };
+
+    /* === Layer Taps с защитой от ложных срабатываний для hmr слоев === */
+    ltl: ltl {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LAYER_TAP_LEFT";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <200>;
+      quick-tap-ms = <150>;
+      require-prior-idle-ms = <150>;
+      bindings = <&mo>, <&kp>;
+      hold-trigger-key-positions = <KEYS_R THUMBS>;
+      hold-trigger-on-release;
+    };
+
+    ltr: ltr {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LAYER_TAP_RIGHT";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <200>;
+      quick-tap-ms = <150>;
+      require-prior-idle-ms = <150>;
+      bindings = <&mo>, <&kp>;
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
+      hold-trigger-on-release;
+    };
+  };
+};

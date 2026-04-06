@@ -1,0 +1,9 @@
+/ {
+    macros {
+      v_grave: v_grave { // тройная обр. кавычка
+          compatible = "zmk,behavior-macro";
+          label = "` ` `";
+          #binding-cells = <0>;
+          bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+      };
+};
