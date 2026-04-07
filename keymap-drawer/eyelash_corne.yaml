@@ -19,11 +19,11 @@ layers:
   - {t: S, h: '$$mdi:apple-keyboard-option$$'}
   - {t: D, h: '$$mdi:apple-keyboard-control$$'}
   - {t: F, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: G, h: EN_SYM}
+  - {t: G, h: SYM}
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
-  - {t: H, h: EN_SYM}
+  - {t: H, h: SYM}
   - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: K, h: '$$mdi:apple-keyboard-control$$'}
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
@@ -43,12 +43,12 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: ']', s: '}'}
-  - {t: '$$mdi:keyboard-esc$$', h: SYM}
+  - {t: '$$mdi:keyboard-esc$$', h: UN_SYM}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:apple-keyboard-caps$$', h: NUM}
   - {t: '$$mdi:backspace$$', h: NUM}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:backspace-reverse-outline$$', h: SYM}
+  - {t: '$$mdi:backspace-reverse-outline$$', h: UN_SYM}
   NUM:
   - +
   - {t: '7', s: '&'}
@@ -66,7 +66,7 @@ layers:
   - {t: '-', s: _}
   - {t: '4', s: $}
   - {t: '5', s: '%'}
-  - '6'
+  - {t: '6', s: ^}
   - {t: /, s: '?'}
   - {t: '=', s: +}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
@@ -79,9 +79,9 @@ layers:
   - KP DIVIDE
   - KP EQUAL
   - {t: '0', s: )}
-  - '1'
-  - '2'
-  - '3'
+  - {t: '1', s: '!'}
+  - {t: '2', s: '@'}
+  - {t: '3', s: '#'}
   - {t: ., s: '>'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -99,54 +99,54 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:backspace-reverse-outline$$
   SYM:
-  - '&copyrt'
-  - '&lcurly'
-  - '&rcurly'
-  - '&lparen'
-  - '&rparen'
-  - '&grave'
-  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
-  - '&dot'
-  - '&plus'
-  - '&percent'
-  - '&colon'
-  - '&excl'
-  - '&tilde'
-  - '&laquo'
-  - '&lbkt'
-  - '&rbkt'
-  - '&uc_lt'
-  - '&gt'
-  - '&apos'
-  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
-  - $$mdi:mouse-left-click-outline$$
-  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - '&comma'
-  - '&minus'
-  - '&equal'
-  - '&semi'
-  - '&ques'
-  - '&at'
-  - '&raquo'
-  - '&amps'
-  - '&pipe'
-  - '&bslash'
-  - '&fslash'
-  - '&dqt'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - '&hash'
-  - '&astrk'
-  - '&caret'
-  - '&under'
-  - '&dollar'
-  - '&endash'
-  - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '`', s: '~'}
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - {t: '-', s: _}
+  - $$mdi:alpha-w-box$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: held}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: H, type: held alternate}
+  - J
+  - K
+  - L
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '=', s: +}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&v_grave'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: \, s: '|'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   NAV:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -229,8 +229,8 @@ layers:
   - OUT USB
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&uc UC_SET_LINUX'
-  - '&uc UC_SET_WIN_COMPOSE'
+  - '&uc_linux'
+  - '&uc_win'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F10
@@ -245,52 +245,52 @@ layers:
   - $$mdi:progress-download$$
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  EN_SYM:
-  - {t: '`', s: '~'}
-  - '!'
-  - '@'
-  - '#'
-  - $
-  - '%'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - ':'
-  - '&'
-  - '*'
-  - (
-  - )
-  - {t: '-', s: _}
-  - $$mdi:alpha-w-box$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: held}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: held alternate}
-  - J
-  - K
-  - L
-  - {t: ;, s: ':'}
-  - {t: '=', s: +}
-  - '&nbsp'
-  - '&h_lt'
+  UN_SYM:
+  - '&deg'
+  - '&lcurly'
+  - '&rcurly'
+  - '&lparen'
+  - '&rparen'
+  - '&dqt'
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
+  - '&plus'
+  - '&dot'
+  - '&percent'
+  - '&colon'
+  - '&excl'
+  - '&tilde'
+  - '&laquo'
+  - '&lbkt'
+  - '&rbkt'
+  - '&uc_lt'
   - '&gt'
-  - '&amp'
-  - '&quot'
   - '&apos'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&ensp'
-  - '&emsp'
-  - '&copy'
-  - '&euro'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: \, s: '|'}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - $$mdi:mouse-left-click-outline$$
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - '&minus'
+  - '&comma'
+  - '&equal'
+  - '&semi'
+  - '&ques'
+  - '&at'
+  - '&raquo'
+  - '&amps'
+  - '&pipe'
+  - '&bslash'
+  - '&fslash'
+  - '&grave'
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - '&hash'
+  - '&astrk'
+  - '&caret'
+  - '&under'
+  - '&dollar'
+  - '&endash'
+  - {t: '$$mdi:keyboard-esc$$', type: held}
+  - $$mdi:keyboard-space$$
+  - $$mdi:apple-keyboard-caps$$
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:backspace-reverse-outline$$', type: held alternate}
