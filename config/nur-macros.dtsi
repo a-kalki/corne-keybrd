@@ -1,10 +1,70 @@
 / {
     macros {
-      v_grave: v_grave { // тройная обр. кавычка
+
+      // Блок кода: печатает ```
+      md_grave: md_grave {
+        compatible = "zmk,behavior-macro";
+        label = "` ` `";
+        #binding-cells = <0>;
+        bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+      };
+
+      // Жирный текст: печатает **** и возвращает курсор на 2 позиции назад
+      md_bold: md_bold {
           compatible = "zmk,behavior-macro";
-          label = "` ` `";
           #binding-cells = <0>;
-          bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+          bindings = <&kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp LEFT &kp LEFT>;
+      };
+
+      // Курсив: печатает __ и возвращает курсор на 1 позицию назад
+      md_italic: md_italic {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp UNDER &kp UNDER &kp LEFT>;
+      };
+
+      // Ссылка: печатает []() и возвращает курсор на 3 позиции назад
+      md_link: md_link {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LBKT &kp RBKT &kp LPAR &kp RPAR &kp LEFT &kp LEFT &kp LEFT>;
+      };
+
+      // Чекбокс: - [ ] 
+      md_check: md_check {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp MINUS &kp SPACE &kp LBKT &kp SPACE &kp RBKT &kp SPACE>;
+      };
+
+      // ТЕРМИНАЛЬНЫЕ И СИСТЕМНЫЕ
+      
+      // sudo !! (выполнить предыдущую команду с sudo)
+      t_last: t_last {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <10>;
+          bindings = <&kp S &kp U &kp D &kp O &kp SPACE &kp EXCL &kp EXCL &kp ENTER>;
+      };
+
+      // Быстрое копирование/вставка для Linux терминала
+      t_copy: t_copy {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LCTRL &kp LSHFT &kp C>;
+      };
+
+      t_paste: t_paste {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LCTRL &kp LSHFT &kp V>;
+      };
+
+      // Стрелочка для кода ->
+      arrow: arrow {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp SPACE &kp EQUAL &kp GT &SPACE>;
       };
     };
 };
