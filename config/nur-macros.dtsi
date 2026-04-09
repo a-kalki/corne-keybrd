@@ -69,18 +69,5 @@
           wait-ms = <10>;
           bindings = <&kp S &kp U &kp D &kp O &kp SPACE &kp EXCL &kp EXCL &kp ENTER>;
       };
-
-      // Быстрое копирование/вставка для Linux терминала
-      t_copy: t_copy {
-          compatible = "zmk,behavior-macro";
-          #binding-cells = <0>;
-          bindings = <&kp LCTRL &kp LSHFT &kp C>;
-      };
-
-      t_paste: t_paste {
-          compatible = "zmk,behavior-macro";
-          #binding-cells = <0>;
-          bindings = <&kp LCTRL &kp LSHFT &kp V>;
-      };
     };
 };
