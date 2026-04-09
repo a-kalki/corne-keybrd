@@ -98,7 +98,7 @@
       bindings = <
 &kp GRAVE    &kp EXCL   &kp AT    &kp HASH     &kp DLLR     &kp PRCNT              &none           &kp CARET    &kp AMPS    &kp ASTRK    &kp LPAR    &kp RPAR   &kp MINUS
 &caps_word   &none      &none     &ts_interp   &ts_arrow    &ts_log         &none  &none  &none    &kp H        &kp J       &kp K        &kp L       &none      &kp EQUAL
-&none        &none      &none     &LC(LS(C))   &LC(LS(V))   &t_last     &none      &none           &md_grave    &md_bold    &md_italic   &md_link    &md_check  &kp BSLH
+&none        &none      &none     &kp LC(LS(C))   &kp LC(LS(V))   &t_last     &none      &none           &md_grave    &md_bold    &md_italic   &md_link    &md_check  &kp BSLH
                                   &trans       &trans       &trans                                 &trans       &trans      &trans
       >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
