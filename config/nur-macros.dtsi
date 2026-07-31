@@ -1,15 +1,4 @@
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        // Q+S+Z hold >2 sec → soft off
-        combo_qsz: combo_qsz {
-            timeout-ms = <50>;
-            key-positions = <1 14 25>;
-            bindings = <&soft_off>;
-        };
-    };
-
     macros {
 
       // Блок кода: печатает ```
