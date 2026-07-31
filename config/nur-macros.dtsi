@@ -1,10 +1,84 @@
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        // Q+S+Z hold >2 sec → soft off
+        combo_qsz: combo_qsz {
+            timeout-ms = <50>;
+            key-positions = <1 14 25>;
+            bindings = <&soft_off>;
+        };
+    };
+
     macros {
-      v_grave: v_grave { // тройная обр. кавычка
+
+      // Блок кода: печатает ```
+      md_grave: md_grave {
+        compatible = "zmk,behavior-macro";
+        label = "` ` `";
+        #binding-cells = <0>;
+        bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+      };
+
+      // Жирный текст: печатает **** и возвращает курсор на 2 позиции назад
+      md_bold: md_bold {
           compatible = "zmk,behavior-macro";
-          label = "` ` `";
           #binding-cells = <0>;
-          bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+          bindings = <&kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp LEFT &kp LEFT>;
+      };
+
+      // Курсив: печатает __ и возвращает курсор на 1 позицию назад
+      md_italic: md_italic {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp UNDER &kp UNDER &kp LEFT>;
+      };
+
+      // Ссылка: печатает []() и возвращает курсор на 3 позиции назад
+      md_link: md_link {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LBKT &kp RBKT &kp LPAR &kp RPAR &kp LEFT &kp LEFT &kp LEFT>;
+      };
+
+      // Чекбокс: - [ ]
+      md_check: md_check {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp MINUS &kp SPACE &kp LBKT &kp SPACE &kp RBKT &kp SPACE>;
+      };
+
+      // ПРОГРАММИСТКИЕ
+
+      // Стрелочка для кода ->
+      ts_log: ts_log {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp C &kp O &kp N &kp S &kp O &kp L &kp E &kp DOT &kp L &kp O &kp G &kp LPAR &kp RPAR &kp LEFT>;
+      };
+
+      // Стрелочная функция: () => {} (курсор внутри фигурных скобок)
+      ts_arrow: ts_arrow {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LPAR &kp RPAR &kp SPACE &kp EQUAL &kp GT &kp SPACE &kp LBRC &kp RBRC &kp LEFT>;
+      };
+
+      // Интерполяция строки: ${} (курсор внутри)
+      ts_interp: ts_interp {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp DLLR &kp LBRC &kp RBRC &kp LEFT>;
+      };
+
+      // ТЕРМИНАЛЬНЫЕ И СИСТЕМНЫЕ
+
+      // sudo !! (выполнить предыдущую команду с sudo)
+      t_last: t_last {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <10>;
+          bindings = <&kp S &kp U &kp D &kp O &kp SPACE &kp EXCL &kp EXCL &kp ENTER>;
       };
     };
 };
